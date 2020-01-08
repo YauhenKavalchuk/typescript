@@ -1,4 +1,4 @@
-// Simple example of enum
+// Simple example of enum type
 enum Directions {
     Up,
     Down,
@@ -9,7 +9,7 @@ enum Directions {
 Directions.Up;      // 0
 Directions.Down;    // 1
 Directions.Left;    // 2
-coDirections.Right; // 3
+Directions.Right;   // 3
 
 // Reverse enum
 enum Directions {
@@ -24,7 +24,7 @@ Directions[1]	// "Down"
 Directions[2]	// "Left"
 Directions[3]	// "Right"
 
-// Compiled
+// Compiled code
 "use strict";
 var Directions;
 (function (Directions) {
@@ -34,7 +34,7 @@ var Directions;
     Directions[Directions["Right"] = 3] = "Right";
 })(Directions || (Directions = {}));
 
-// Custom index
+// Custom index for enum elements
 enum Directions {
     Up = 2,
     Down = 4,
@@ -47,17 +47,18 @@ Directions.Down;	// 4
 Directions[6];	// Left
 Directions[8];	// Right
 
-// Names for keys
+// Custom name for keys
 enum links {
     youtube = 'https://youtube.com/',
     vk = 'https://vk.com/',
     facebook = 'https://facebook.com/'
 }
 
+// Using
 links.vk        // "https://vk.com/"
 links.youtube 	// "https://youtube.com/"
 
-// Compiled
+// Compiled code
 "use strict";
 var links;
 (function (links) {
@@ -73,7 +74,7 @@ const enum links {
     facebook = 'https://facebook.com/'
 }
 
-// Compiled
+// Compiled code is empty
 "use strict";
 
 // const enum (with using)
@@ -83,8 +84,9 @@ const enum links {
     facebook = 'https://facebook.com/'
 }
 
+// Using of enum properties
 const arr = [links.vk, links.facebook];
 
-// Compiled
+// Compiled code
 "use strict";
 const arr = ["https://vk.com/" /* vk */, "https://facebook.com/" /* facebook */];

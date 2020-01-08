@@ -14,10 +14,10 @@ const logClass = () => ();
 
 // Class Decorator
 const logClass = (constructor: Function) => {
-    console.log(constructor);	// class User {}
+    console.log(constructor);	// Result of call: class User {}
 };
 
-@logClass
+@logClass		// <--- Apply decorator for class
 class User {
 
     constructor(public name: string, public age: number) {}
@@ -30,12 +30,12 @@ class User {
 
 // Property Decorator
 const logProperty = (target: Object, propertyKey: string | symbol) => {
-    console.log(propertyKey);	// "secret"
+    console.log(propertyKey);	// Result of call: "secret"
 };
 
 class User {
 
-    @logProperty
+    @logProperty		// <--- Apply decorator for property
     secret: number;
 
     constructor(public name: string, public age: number, secret: number) {
@@ -49,15 +49,19 @@ class User {
 }
 
 // Method Decorator
-const logMethod = (target: Object, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
-    console.log(propertyKey);   // "getPass"
+const logMethod = (
+  target: Object,
+  propertyKey: string | symbol,
+  descriptor: PropertyDescriptor
+) => {
+    console.log(propertyKey);   // Result of call: "getPass"
 };
 
 class User {
 
     constructor(public name: string, public age: number) {}
     
-    @logMethod
+    @logMethod			// <--- Apply decorator for method
     public getPass(): string {
         return `${this.name}${this.age}`;
     }
@@ -65,15 +69,19 @@ class User {
 }
 
 // get/set Decorator
-const logSet = (target: Object, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
-    console.log(propertyKey);	// "myAge"
+const logSet = (
+  target: Object,
+  propertyKey: string | symbol,
+  descriptor: PropertyDescriptor
+) => {
+    console.log(propertyKey);	// Result of call: "myAge"
 };
 
 class User {
 
     constructor(public name: string, public age: number) {}
     
-    @logSet
+    @logSet		// <--- Apply decorator for set
     set myAge(age: number) {
         this.age = age;
     }
@@ -89,7 +97,11 @@ function factory(value: any) {        // Factory
 
 // Applying Factory Decorator
 const enumerable = (value: boolean) => {
-    return (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
+    return (
+      target: any,
+      propertyKey: string | symbol,
+      descriptor: PropertyDescriptor
+    ) => {
         descriptor.enumerable = value;
     };
 }
@@ -98,14 +110,14 @@ class User {
 
     constructor(public name: string, public age: number) {}
 
-    @enumerable(false)
+    @enumerable(false)			// <--- Call decorator factory with argument
     public getPass(): string {
         return `${this.name}${this.age}`;
     }
 
 }
 
-// Decorator Composition
+// Decorator composition syntax
 // Apply decorators (one line)
 @f @g x
 

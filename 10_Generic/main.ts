@@ -24,18 +24,19 @@ getter(10).length;        // Property 'length' does not exist on type '10'
 getter('test').length;    // 4
 
 // Generic behavior explanation
-// Number
+// For a number
 const getter = (data: number): number => data;
 getter(10).length;        // Property 'length' does not exist on type '10'
 
-// String
+// For a string
 const getter = (data: string): string => data;
 getter('test').length;    // 4
 
 // Function arguments type
 const getter = <T>(data: T): T => data;
 
-getter<number>(10).length;		// Property 'length' does not exist on type '10'
+// Define type in function calling
+getter<number>(10).length;		  // Property 'length' does not exist on type '10'
 getter<string>('test').length;	// 4
 
 // Array generic type
@@ -80,9 +81,9 @@ class User<T, K> {
 
 }
 
-const yauhen = new User('Yauhen', '31');
-const max = new User(123, 321);
-const leo = new User('Leo', 22);
+const yauhen = new User('Yauhen', '31');	// string, string
+const max = new User(123, 321);				// number, number
+const leo = new User('Leo', 22);			// string, number
 
 yauhen.getPass();     // "Yauhen31"
 max.getPass();        // "123321"
@@ -102,7 +103,7 @@ class User<T, K> {
     }
 }
 
-// Specify generic type 'K'
+// Specify generic type 'K' with key-word 'extends'
 class User<T, K extends number> {
 
     constructor(public name: T, public age: K) {}
@@ -117,5 +118,10 @@ class User<T, K extends number> {
 }
 
 const yauhen = new User('Yauhen', 31);
-const max = new User('Max', '20');  // Argument of type '"20"' is not assignable to parameter of type 'number'
 const leo = new User(123, 321);
+
+/*
+  Error:
+  Argument of type '"20"' is not assignable to parameter of type 'number'
+*/
+const max = new User('Max', '20');

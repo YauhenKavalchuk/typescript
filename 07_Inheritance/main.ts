@@ -1,13 +1,7 @@
-// Sixple Class example
+// Simple Class example
 class User {
-    
-    name: string;
-    age: number;
 
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+    constructor(public name: string, public age: number) {}
 
 }
 
@@ -15,34 +9,24 @@ const yauhen = new User('Yauhen', 31);
 
 yauhen;  // { name: 'Yauhen', age: 31 }
 
-// Class static property
+// Class with static property
 class User {
-    
-    name: string;
-    age: number;
-    static secret = 12345; 
 
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+    static secret = 12345;  // static property
+
+    constructor(public name: string, public age: number) {}
 
 }
 
-// Call static property
+// Example of call static property
 User.secret
 
 // Call static property in class method
 class User {
- 
-    name: string;
-    age: number;
+
     static secret = 12345; 
 
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+    constructor(public name: string, public age: number) {}
 
     getPass(): string {
         return `${this.name}${User.secret}`;
@@ -52,9 +36,9 @@ class User {
 
 const yauhen = new User('Yauhen', 30);
 
-yauhen.getPass(); // "Yauhen12345"
+yauhen.getPass();	// "Yauhen12345"
 
-// Compiled
+// Compiled code
 "use strict";
 class User {
     constructor(name, age) {
@@ -81,17 +65,18 @@ class User {
 
 }
 
-// Inheritance
+// Inheritance example
 class Yauhen extends User {
 
     name: string = 'Yauhen';
 
 }
 
+// Create instances based on 'User' and 'Yauhen' classes
 const max = new User('Max', 20);
-const yauhen = new Yauhen(31); // Expected 2 arguments, but got 1
+const yauhen = new Yauhen(31);	// Expected 2 arguments, but got 1
 
-// Realization of constructor in inherited class
+// Realization of constructor in the inherited class
 class Yauhen extends User {
 
     name: string = 'Yauhen';
@@ -102,6 +87,8 @@ class Yauhen extends User {
 
 }
 
+// No error
+// Create instances based on 'User' and 'Yauhen' classes
 const max = new User('Max', 20);
 const yauhen = new Yauhen(31);
 
@@ -124,7 +111,7 @@ const yauhen = new Yauhen(31);
 
 yauhen.getPass(); // "31Yauhen12345"
 
-// Abstract Class
+// Abstract class example
 abstract class User {
 
     constructor(public name: string, public age: number) {}
@@ -133,11 +120,11 @@ abstract class User {
         console.log(this.name);
     }
 
-    abstract getPass(): string;
+    abstract getPass(): string;   // Abstract method
 
 }
 
-const max = new User('Max', 20); // Cannot create an instance of an abstract class
+const max = new User('Max', 20);  // Cannot create an instance of an abstract class
 
 // Create class using Abstraction
 class Yauhen extends User { // Non-abstract class 'Yauhen' does not implement inherited abstract member 'getPass' from class 'User'
@@ -165,5 +152,7 @@ class Yauhen extends User {
 
 }
 
-yauhen.greet();	// "Yauhen"
+// Call prototype method
+yauhen.greet();		// "Yauhen"
+// Call personal method
 yauhen.getPass();	// "31Yauhen"

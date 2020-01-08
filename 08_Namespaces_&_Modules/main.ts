@@ -18,7 +18,7 @@ const isEmpty = <T>(data: T): boolean => !data;
 
 }());
 
-// Namespace define
+// Define namespace
 namespace Utils {
 
     const SECRET: string = '123321';
@@ -42,6 +42,7 @@ namespace Utils {
 
 };
 
+// Try to call method outside namespace
 const myPass = Utils.getPass('Yauhen', 31);	// Property 'getPass' does not exist on type 'typeof Utils'
 
 // Export data from Namespace
@@ -56,13 +57,15 @@ namespace Utils {
 
 };
 
-const myPass = Utils.getPass('Yauhen', 31);	// "Yauhen31"
+// Calling exported from namespace methods
+const myPass = Utils.getPass('Yauhen', 31);		// "Yauhen31"
 const isSecret = Utils.isEmpty(Utils.SECRET);	// "false"
 
-const PI = 3;				// No Errors
+// Constant with the same name outside namespace
+const PI = 3;									// No Errors
 
-// Import/Export
-// file Utils.ts
+// File "Utils.ts"
+// Export
 namespace Utils {
 
     export const SECRET: string = '123321';
@@ -71,18 +74,21 @@ namespace Utils {
 
 };
 
-// file Customers.ts
-/// <reference path="Utils.ts" />
+// File "Customers.ts"
+// Import
+/// <reference path="Utils.ts" />			// <--- Import
 
+// Calling "Utils" namespace method
 const myPass = Utils.getPass('Yauhen', 31);	// "Yauhen31"
 
 // Import/Export (ES6 Modules)
-// file Utils.ts
+
+// File "Utils.ts"
 export const SECRET: string = '123321';
 
 export const getPass = (name: string, age: number): string => `${name}${age}`;
 
-// file Customers.ts
-import { getPass } from "./Utils";
+// File "Customers.ts"
+import { getPass, SECRET } from "./Utils";
 
-const myPass = Utils.getPass('Yauhen', 31);	// "Yauhen31"
+const myPass = getPass(SECRET, 31);	// "Yauhen31"

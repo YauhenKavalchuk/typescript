@@ -5,12 +5,12 @@
 - null
 - undefined
 - object
-- Symbol
+- Symbol    // ES6
 
-// Type changing
-var num = 42;
-num = 'string';
-num = '42';
+// Variable type changing
+var num = 42;		// number
+num = 'hello';		// string
+num = false;		// boolean
 
 // Defining types using operator typeof
 typeof 42;          // "number"
@@ -22,12 +22,13 @@ typeof null;        // "object"
 typeof undefined;   // "undefined"
 typeof Symbol();    // "symbol"
 
-// let & const difference
+// const
 const num = 42;
-num = 'string';  // Uncaught TypeError: Assignment to constant variable
+num = 'hello';	// Uncaught TypeError: Assignment to constant variable
 
+// let
 let num = 42;
-num = 'string';
+num = 'hello';	// No errors
 
 // Boolean Type
 let isCompleted: boolean = false;
@@ -38,32 +39,34 @@ isCompleted = '42';   // Type ’"42"' is not assignable to type 'boolean'
 isCompleted = true;
 
 // Number Type
-let decimal: number = 6;
-let integer: number = 7.10;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
+const decimal: number = 6;
+const integer: number = 7.10;
+const hex: number = 0xf00d;
+const binary: number = 0b1010;
+const octal: number = 0o744;
 
-// String Type
-let name: string = 'Yauhen';
+// String Type for simple string
+const name: string = 'Yauhen';
 
-let sentence: string = `Hello, my name is ${ name }`;
+// String Type for template string
+const sentence: string = `Hello, my name is ${ name }!`;
 
 // Null & Undefined Types
-// Javascript:
-typeof null;	// "object"
+// JavaScript:
+typeof null;		// "object"
 typeof undefined;	// "undefined"
 
-// TypeScript:
-let u: undefined = undefined;
-let n: null = null;
+// TypeScript types:
+const u: undefined = undefined;
+const n: null = null;
 
 // Void Type
-// Correct:
+// For function result:
 const greetUser = (): void => {
     alert("Hello, nice to see you!");
 };
 
+// For 'greetUser'
 // Error: Type '() => void' is not assignable to type 'void'
 const greetUser: void = () => {
     alert("Hello, nice to see you!");

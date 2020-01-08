@@ -10,14 +10,12 @@ let user: any = {
     age: 30,
 };
 
-user = 'test';
+user = 'test';	// Now type of user is string
 
 // Array Type
-let list: number[] = [1, 2, 3];
-
 let list: Array<number> = [1, 2, 3];
 
-// Define Object type
+// Define object type
 let user: { name: string, age: number } = {
     name: 'Yauhen',
     age: 30,
@@ -26,7 +24,12 @@ let user: { name: string, age: number } = {
 // Try to change property
 let user: { name: string, age: number } = {
     name: 'Yauhen',
-    age: 'test',    // The expected type comes from property 'age' which is declared here on type '{ name: string; age: number; }'
+  	/*
+      Error:
+ 	The expected type comes from property 'age' 
+ 	which is declared here on type '{ name: string; age: number; }'
+    */
+    age: 'test',		// <--- Must be a number
 };
 
 // Try to change variable type
@@ -46,19 +49,20 @@ let user: { name: string, age: number, nickName: string } = {
     nickName: 'webDev',
 };
 
-// Dynamicaly object changes
+// Base object structure
 let user: { name: string, age: number } = {
     name: 'Yauhen',
     age: 30,
 };
 
-user.nickName = 'webDev';   // Property 'nickName' does not exist on type '{ name: string; age: number; }'
+// Dynamically try to add 'nickName' property
+user.nickName = 'webDev';  // Property 'nickName' does not exist on type '{name: string; age: number;}'
 
 // Updating object type
 let user: { name: string, age: number, nickName: string } = {
     name: 'Yauhen',
     age: 30,
-    nickName: 'webDev',
+    nickName: 'webDev',	   // Now everything is correct
 };
 
 // New admin object
@@ -84,12 +88,12 @@ let admin: { name: string, age: number, nickName: string } = {
 // Using Type for objects structure
 type Person = { name: string, age: number, nickName: string };
 
+// Apply Person type for objects with the same structure
 let user: Person = {
     name: 'Yauhen',
     age: 30,
     nickName: 'webDev',
 };
-
 
 let admin: Person = {
     name: 'Max',
@@ -101,13 +105,13 @@ let admin: Person = {
 let user: Person = {
     name: 'Yauhen',
     age: 30,
-    nickName: 'webDev',
+    nickName: 'webDev',			// <--- property
 };
 
 let admin: Person = {
     name: 'Max',
     age: 20,
-    getPass(): string {
+    getPass(): string {			// <--- new method
         return `${this.name}${this.age}`;
     },
 };

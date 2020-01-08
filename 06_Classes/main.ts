@@ -35,8 +35,8 @@ yauhen;	// { name: "Yauhen", age: 31, nickName: "webDev" }
 class User {
 
     public name: string;
-    private age: number;
-    protected nickName: string;
+  	private nickName: string;
+    protected age: number;
     readonly pass: number;
 
     constructor(name: string, age: number, nickName: string, pass: number) {
@@ -50,10 +50,10 @@ class User {
 
 const yauhen = new User('Yauhen', 31, 'webDev', 123);
 
-yauhen.name;	// "Yauhen"
-yauhen.age;	// Property 'age' is private and only accessible within class 'User'
-yauhen.nickName;	// Property 'nickName' is protected and only accessible within class 'User' and its subclasses
-yauhen.pass = 321	// Cannot assign to 'pass' because it is a read-only property
+yauhen.name;	    // "Yauhen"
+yauhen.nickName;  // Prop 'nickName' is private and only accessible within class 'User'
+yauhen.age;		    // Prop 'age' is protected and only accessible within class 'User' and its subclasses
+yauhen.pass = 42; // Cannot assign to 'pass' because it is a read-only property
 
 // Class default properties
 class User {

@@ -26,17 +26,23 @@ const yauhen: User = {
     age: 31,
 }
 
-// Interface optional properties
+// Interface optional property
 interface User {
     name: string,
-    age?: number,
+    age?: number,	// <--- Optional
 }
 
+// Creation with a required property
 const yauhen: User = {
     name: 'Yauhen',
 }
 
-const max: User = { // Property 'name' is missing in type '{ age: number; }' but required in type 'User'
+// Creation with missing a required property
+/*
+  Error:
+  Property 'name' is missing in type '{ age: number; }' but required in type 'User'
+*/
+const max: User = {
     age: 20,
 }
 
@@ -63,7 +69,11 @@ interface User {
 const yauhen: User = {
     name: 'Yauhen',
     age: 31,
-    nickName: 'webDev', // Object literal may only specify known properties, and 'nickName' does not exist in type 'User'
+  	/*
+      Error:
+      Object literal may only specify known properties, and 'nickName' does not exist in type 'User'
+    */
+    nickName: 'webDev',		// <--- Didn't described in interface "User"
 }
 
 // Interface extension
@@ -103,6 +113,7 @@ interface User {
     age: number,
 }
 
+// Separate interface with one method
 interface Pass {
     getPass(): string,
 } 
@@ -122,6 +133,7 @@ interface User {
     age: number,
 }
 
+// Interface extends
 interface Admin extends User {
     getPass(): string,
 }

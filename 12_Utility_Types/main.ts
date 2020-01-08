@@ -32,7 +32,7 @@ const x: Record<Page, PageInfo> = {
     home: { title: 'home' },
 };
 
-// Compiled
+// Compiled code
 "use strict";
 const x = {
     about: { title: 'about' },
@@ -81,8 +81,8 @@ type T1 = Extract<string | number | (() => void), Function>;  // () => void
 type T0 = NonNullable<string | number | undefined>;   // string | number
 type T1 = NonNullable<string[] | null | undefined>;   // string[]
 
-ReturnType<T>
-declare function f1(): { a: number, b: string }
+// ReturnType<T>
+declare function f1(): { a: number, b: string };
 
 type T0 = ReturnType<() => string>;                                  // string
 type T1 = ReturnType<(s: string) => void>;                           // void
