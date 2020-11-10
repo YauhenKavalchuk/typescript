@@ -9,19 +9,19 @@
 - [Typescript Utils (утилиты)](https://www.typescriptlang.org/docs/handbook/utility-types.html)
 
 ## Список уроков:
-- #0 Введение (Introduction)
-- #1 Базовые типы (Basic Types. Part I)
-- #2 Базовые типы (Basic Types. Part II)
-- #3 Перечисления (Enums)
-- #4 Функции (Functions)
-- #5 Объекты (Objects)
-- #6 Классы (Classes)
-- #7 Наследование (Inheritance)
-- #8 Пространства имён и молули (Namespaces & Modules)
-- #9 Интерфейсы (Type Interface)
-- #10 Общие типы (Generic)
-- #11 Декораторы (Decorators)
-- #12 Утилиты (Utility Types)
+- [#0 Введение (Introduction)](https://youtu.be/MtO76yEYbxA)
+- [#1 Базовые типы (Basic Types. Part I)](https://youtu.be/iugNHvMWBw4)
+- [#2 Базовые типы (Basic Types. Part II)](https://youtu.be/MNcl1Fni4cw)
+- [#3 Перечисления (Enums)](https://youtu.be/FltLrtKWMak)
+- [#4 Функции (Functions)](https://youtu.be/qrIuuJc2Zc8)
+- [#5 Объекты (Objects)](https://youtu.be/gjBSTMBzz-U)
+- [#6 Классы (Classes)](https://youtu.be/OruUd2HULaI)
+- [#7 Наследование (Inheritance)](https://youtu.be/wTwPThKzu-U)
+- [#8 Пространства имён и модули (Namespaces & Modules)](https://youtu.be/5Eap2h9AffA)
+- [#9 Интерфейсы (Type Interface)](https://youtu.be/RUCpNX0E_jw)
+- [#10 Общие типы (Generic)](https://youtu.be/ysQb60CQB8U)
+- [#11 Декораторы (Decorators)](https://youtu.be/1-lWrocbnK8)
+- [#12 Утилиты (Utility Types)](https://youtu.be/Qf_WJGJf4yw)
 
 ## Автор курса в социальных сетях:
 Social network | Link to Profile
