@@ -1,7 +1,7 @@
 #  TypeScript
 
 ### Описание курса:
-
+В данном видеокурсе мы с вами рассмотрим возможности языка строгой типизации - TypeScript. Разберём его основные фишки и ключевые отличия от JavaScript. Изучим такие понятия, как перечисления (Enum), интерфейсы, пространства имён. И в дополнение, рассмотрим набор нативных утилит, которые предоставляет сам язык.
 
 ## Полезные ссылки:
 - [TypeScript (документация)](https://www.typescriptlang.org)
@@ -9,19 +9,19 @@
 - [Typescript Utils (утилиты)](https://www.typescriptlang.org/docs/handbook/utility-types.html)
 
 ## Список уроков:
-- TypeScript #0 Введение (Introduction)
-- TypeScript #1 Базовые типы (Basic Types. Part I)
-- TypeScript #2 Базовые типы (Basic Types. Part II)
-- TypeScript #3 Перечисления (Enums)
-- TypeScript #4 Функции (Functions)
-- TypeScript #5 Объекты (Objects)
-- TypeScript #6 Классы (Classes)
-- TypeScript #7 Наследование (Inheritance)
-- TypeScript #8 Пространства имён и молули (Namespaces & Modules)
-- TypeScript #9 Интерфейсы (Type Interface)
-- TypeScript #10 Общие типы (Generic)
-- TypeScript #11 Декораторы (Decorators)
-- TypeScript #12 Утилиты (Utility Types)
+- #0 Введение (Introduction)
+- #1 Базовые типы (Basic Types. Part I)
+- #2 Базовые типы (Basic Types. Part II)
+- #3 Перечисления (Enums)
+- #4 Функции (Functions)
+- #5 Объекты (Objects)
+- #6 Классы (Classes)
+- #7 Наследование (Inheritance)
+- #8 Пространства имён и молули (Namespaces & Modules)
+- #9 Интерфейсы (Type Interface)
+- #10 Общие типы (Generic)
+- #11 Декораторы (Decorators)
+- #12 Утилиты (Utility Types)
 
 ## Автор курса в социальных сетях:
 Social network | Link to Profile
